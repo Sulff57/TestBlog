@@ -1,0 +1,16 @@
+A FAIRE
+
+- Vérifier si code fonctionnel quand 0 News et 0 commentaires existants.
+- Rechercher la ligne commentrée avec "!!!" et faire la modification correspondante.
+- Rajouter message pour indiquer la taille maximale de l'avatar à envoyer et les formats acceptés
+- Possibilité configurer chemin accès avatar par défaut
+- Refactoriser parties communes verif_session.php et connexion_post.php
+- Mettre possibilité configurer taille avatars
+- Centrer lien "SOURCE GIT"
+- Ajoutez possibilités de rajouter des liens dans la rédaction de billets (voir section "Créez votre bbCode" cours regex n°2 OC)
+- Déboguer envoi avatar sur version online
+
+FACULTATIF
+- Laisser possibilité de régler la taille max de l'avatar (poids/dimensions) dans le pannel admin
+- Laisser possibilité définir temps redirection
+- laisser possibilité définir extension images autorisées
