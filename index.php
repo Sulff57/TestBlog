@@ -100,5 +100,5 @@
     }
     ?>
   </div>
-<?php require('html_parts/charger_CDN_bootstrap.html');
+<?php require('html_parts/charger_CDN_bootstrap.html');?>
 </body>
