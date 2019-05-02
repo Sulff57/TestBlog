@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="robots" content="noindex" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Affichage des billets</title>
 </head>
@@ -92,13 +93,32 @@
     ?>
     <section><?php
     afficher_billets($req);
-    ?></section><?php
+    ?></section>
+
+    <div class="row">
+      <div class="col-lg-1">
+        <div class="btn-group">
+          <a class="btn btn-danger" href="#"><i class="fas fa-fast-backward"></i></a>
+          <a class="btn btn-success" href="#"><i class="fas fa-backward"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-1">
+    <?php
 
     for ($x = 0; $x<=$nombrePages; $x++)
     {
       echo('<a href="index.php?page=' . $x . '">' . $x . '</a>');
     }
     ?>
+      </div>
+      <div class="col-lg-1">
+        <div class="btn-group">
+          <a class="btn btn-danger" href="#"><i class="fas fa-fast-forward"></i></a>
+          <a class="btn btn-success" href="#"><i class="fas fa-forward"></i></a>
+        </div>
+      </div>
+    </div>
+
   </div>
 <?php require('html_parts/charger_CDN_bootstrap.html');?>
 </body>

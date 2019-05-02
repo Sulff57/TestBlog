@@ -14,6 +14,7 @@
 <body>
   <div class="container">
     <section>
+      <!-- FORMULAIRE D'INSCRIPTION -->
         <form action="inscription_post.php" method="post" class="form-mise-en-page form-horizontal" id="inscription" autocomplete="on">
           <div class="form-group">
             <legend>Création de votre compte</legend>
@@ -52,12 +53,23 @@
           </div>
 
           <div class="form-group">
-            <button type="submit" class="button-connexion btn float-right" id="bouton_inscription">continuer</button>
+            <label class="sr-only" for="password_check">Confirmez votre mot de passe</label>
+            <button type="submit" class="btn btn-success" id="bouton_inscription"><i class="fas fa-arrow-circle-right"></i> continuer</button>
           </div>
         </form>
-      </class>
+
+
     </section>
   </div>
 
   <?php require('html_parts/charger_CDN_bootstrap.html'); ?>
+
 </body>
+<footer>
+  <!-- CHARGEMENT JQUERY CDN -->
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous">
+  </script>
+</footer>
