@@ -13,8 +13,8 @@ function afficher_billets($req, $pageAccueil=0)
     {
       $source = htmlspecialchars($billet['source']);
     }?>
-    <article>
-      <div class="news">
+    <article class="row">
+      <div class="news col-lg-12">
         <h3>
           <?php if ($pageAccueil)
           {
@@ -29,7 +29,7 @@ function afficher_billets($req, $pageAccueil=0)
           . ' à ' . htmlspecialchars($billet['date_heure'])
           . "</i><br />"; ?>
         </h3>
-        <p>
+        <p class="col-lg-12">
           <?php
             if ($pageAccueil)
             {

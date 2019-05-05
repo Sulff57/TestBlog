@@ -7,17 +7,23 @@ require('verif_session.php');
     <meta charset="utf-8">
     <meta name="robots" content="noindex" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/commentaires.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Commentaires du billet</title>
 </head>
 
 <?php
-require('connexion_bdd.php');
-require('afficher_billets.php');
+  require('connexion_bdd.php');
+  require('afficher_billets.php');
 ?>
-
-<header>
-  <?php include('html_parts/header.php');?>
-</header>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-lg-12">
+        <?php include('html_parts/header.php');?>
+      </div>
+    </header>
 <?php
 
 try {
@@ -71,9 +77,8 @@ try {
   Message :<br/>' .
   $e->getMessage());
 }
-?>
-<h2>Commentaires</h2>
-<?php
+
+    ?><h2>Commentaires</h2><?php
 
 $rows = $req2->fetchAll();
 if (count($rows) == 0) // !!! A MODIFIER : SI PAS DE COMMENTAIRES EXISTANTS PROVOQUE UNE FAUSSE ERREUR !!!
@@ -82,7 +87,7 @@ if (count($rows) == 0) // !!! A MODIFIER : SI PAS DE COMMENTAIRES EXISTANTS PROV
 }
 else
 {
-  ?><aside><?php
+  ?><aside class="commentaires"><?php
   foreach ($rows as $row)
   {
     ?><p><?php
@@ -101,17 +106,21 @@ else
 
 <!-- On fait passer l'id du billet en paramètre caché pour
 pouvoir y insérer le commentaire également renvoyé dans celui-ci-->
-<form action="commentaires_post.php" method="post">
-  <p>
-    <label for="commentaire">Votre commentaire :</label></br>
-    <textarea name="commentaire" id="commentaire" rows="5" cols="50" <?php
-      // Si session invalide, on grize la zone de commentaires et on affiche le message correspondant à l'intérieur.
-      if (!verif_session()) { echo "disabled>Pour poster un commentaire, vous devez vous identifier."; }
-      // Sinon, on referme simplement la balise <textarea>
-      else { echo ">"; }
-    ?></textarea><br />
-    <input type="hidden" id="id_news" name="id_news" value="<?php echo $id_news; ?>">
-    <input type="submit" value="Envoyer" <?php
-      // Si session invalide, on désactive le bouton de soumission de formulaire.
-      if (!verif_session()) { echo "disabled"; } ?>/>
-  </p>
+    <form action="commentaires_post.php" method="post">
+      <p>
+        <label for="commentaire">Votre commentaire :</label></br>
+        <textarea name="commentaire" id="commentaire" rows="5" cols="50" <?php
+          // Si session invalide, on grize la zone de commentaires et on affiche le message correspondant à l'intérieur.
+          if (!verif_session()) { echo "disabled>Pour poster un commentaire, vous devez vous identifier."; }
+          // Sinon, on referme simplement la balise <textarea>
+          else { echo ">"; }
+        ?></textarea><br />
+        <input type="hidden" id="id_news" name="id_news" value="<?php echo $id_news; ?>">
+        <input type="submit" value="Envoyer" <?php
+          // Si session invalide, on désactive le bouton de soumission de formulaire.
+          if (!verif_session()) { echo "disabled"; } ?>/>
+      </p>
+    </form>
+  </div>
+</body>
+</html>
