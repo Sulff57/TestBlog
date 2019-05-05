@@ -92,29 +92,27 @@
 
     ?>
     <section><?php
-    afficher_billets($req);
+    afficher_billets($req, 1);
     ?></section>
 
     <div class="row">
       <div class="col-lg-1">
         <div class="btn-group">
-          <a class="btn btn-danger" href="#"><i class="fas fa-fast-backward"></i></a>
-          <a class="btn btn-success" href="#"><i class="fas fa-backward"></i></a>
+          <a class="btn btn-danger" href="index.php?page=0"><i class="fas fa-fast-backward"></i></a>
+          <a class="btn btn-success" href="index.php?page=<?php echo ($pageAffichee - 1); ?>"><i class="fas fa-backward"></i></a>
         </div>
       </div>
-      <div class="col-lg-1">
-    <?php
+      <div class="col-lg-1 text-center"><?php
 
-    for ($x = 0; $x<=$nombrePages; $x++)
-    {
-      echo('<a href="index.php?page=' . $x . '">' . $x . '</a>');
-    }
-    ?>
-      </div>
+      for ($x = 0; $x<=$nombrePages; $x++)
+      {
+        echo('<a id="pagination" href="index.php?page=' . $x . '">' . $x . '</a>');
+      }
+      ?></div>
       <div class="col-lg-1">
         <div class="btn-group">
-          <a class="btn btn-danger" href="#"><i class="fas fa-fast-forward"></i></a>
-          <a class="btn btn-success" href="#"><i class="fas fa-forward"></i></a>
+          <a class="btn btn-success" href="index.php?page=<?php echo ($pageAffichee + 1); ?>"><i class="fas fa-forward"></i></a>
+          <a class="btn btn-danger" href="index.php?page=<?php echo $nombrePages; ?>"><i class="fas fa-fast-forward"></i></a>
         </div>
       </div>
     </div>
