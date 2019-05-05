@@ -61,11 +61,13 @@ afficher_billets($req);?>
 
 try {
   $req2 = $db_session->prepare('
-  SELECT auteur, commentaire,
-  DATE_FORMAT(date_commentaire, "%d/%m/%Y") AS date_jour,
-  DATE_FORMAT(date_commentaire, "%Hh%imin%ss") AS date_heure
-  FROM commentaires
-  WHERE id_billet = ?'
+  SELECT c.id_auteur, c.commentaire, m.pseudo,
+  DATE_FORMAT(c.date_commentaire, "%d/%m/%Y") AS date_jour,
+  DATE_FORMAT(c.date_commentaire, "%Hh%imin%ss") AS date_heure
+  FROM commentaires c
+  INNER JOIN membres m
+  ON c.id_auteur = m.id
+  WHERE c.id_billet = ?'
   );
   $req2->execute(array($id_news));
   if (!$req2) {
@@ -87,17 +89,29 @@ if (count($rows) == 0) // !!! A MODIFIER : SI PAS DE COMMENTAIRES EXISTANTS PROV
 }
 else
 {
-  ?><aside class="commentaires"><?php
+  ?><aside class="commentaires row"><?php
   foreach ($rows as $row)
   {
-    ?><p><?php
-        echo '<b>' . htmlspecialchars($row['auteur']) .
-        '</b> le ' . $row['date_jour']
-        . ' à ' . $row['date_heure']
-        . "<br />";
-        echo htmlspecialchars($row['commentaire']) . "\n\n\n\n";
-        ?>
-    </p>
+    ?><div class="col-lg-12">
+        <p class="row"><?php
+        if (file_exists('uploads/avatars' . $row['id_auteur'] . '.png'))
+        {
+          echo '<b class="col-lg-1">' . htmlspecialchars($row['pseudo']) .
+          '<img class="avatar_pseudo" src="uploads/avatars/' . $row['id_auteur'] . '.png"></b> le ' . $row['date_jour']
+          . ' à ' . $row['date_heure']
+          . "<br />";
+        }
+        else
+        {
+          echo '<b class="col-lg-1">' . htmlspecialchars($row['pseudo']) .
+          '<img class="avatar_pseudo" src="uploads/avatars/no_avatar.jpeg"></b> le ' . $row['date_jour']
+          . ' à ' . $row['date_heure']
+          . "<br />";
+        }
+          echo htmlspecialchars($row['commentaire']) . "\n\n\n\n";
+          ?>
+        </p>
+      </div>
     <?php
   }
   ?></aside><?php

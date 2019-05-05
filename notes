@@ -12,6 +12,9 @@ A FAIRE
 - pagination : mettre conditions pour faire disparaitre icones page précédente / suivante si page minimum / maximum atteintes
 - rajouter possibilité définir longueur news page accueil (substr dans afficher_billets.php)
 - Rajouter possibilité fournir source article
+- Empêcher doublons pseudos
+- Résoudre problème upload avatars extension
+- Mettre option afficher "pseudo supprimé" si compte ayant posté inexistant
 
 FACULTATIF
 - Laisser possibilité de régler la taille max de l'avatar (poids/dimensions) dans le pannel admin

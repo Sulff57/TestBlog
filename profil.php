@@ -24,7 +24,7 @@ require('fonctions/avatar_existe.php');
     {
       if (avatar_existe())
       {
-        echo '<img src="uploads/avatars/' . $_SESSION['id'] . '.jpg">';
+        echo '<img src="uploads/avatars/' . $_SESSION['id'] . '.png">';
       }
       else
       {
