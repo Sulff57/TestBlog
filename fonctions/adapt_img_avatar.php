@@ -38,7 +38,7 @@ function adapt_img_avatar($cheminAcces, $dimensionsSouhaitees, $extension)
     // on commence à couper l'image à partir du haut + la moitié de l'excédent jusqu'au bord bas - la moitié de l'excédent
     $zoneRognee = ['x' => 0, 'y' => $excedent, 'width' => $largeurSource, 'height' => ($hauteurSource-$excedent)];
   }
-  elseif ($hauteurSource < $largeurSource)
+  elseif ($hauteurSource <= $largeurSource) // Si hauteur = largeur, le code suivant ne modifie pas l'image
   {
     $excedent = (($largeurSource - $hauteurSource) / 2);
     // la largeur étant trop grande,
@@ -52,6 +52,6 @@ function adapt_img_avatar($cheminAcces, $dimensionsSouhaitees, $extension)
   // On redimensionne l'image aux dimensions souhaitées sans avoir à se soucier des proportions
   // car l'image a été rognée avant
   imagecopyresampled($destination, $imageRognee, 0, 0, 0, 0, $dimensionsSouhaitees, $dimensionsSouhaitees, $size, $size);
-  imagejpeg($destination, 'uploads/avatars/' . $_SESSION['id'] . '.' . $extension);
+  imagepng($destination, 'uploads/avatars/' . $_SESSION['id'] . '.png');
 }
 ?>

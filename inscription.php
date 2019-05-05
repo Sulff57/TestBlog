@@ -23,7 +23,7 @@
           <div class="form-group input-group">
             <label class="sr-only" for="mail">Votre email</label>
             <div class="input-group-prepend">
-              <span class="input-group-text"><i class="fas fa-user-alt"></i></span>
+              <span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
             </div>
             <input type="text" name="mail" id="mail" class="form-control" placeholder="Votre email" autocomplete="off"/>
           </div>
@@ -31,7 +31,7 @@
           <div class="form-group input-group">
             <label class="sr-only" for="pseudo">Pseudonyme</label>
             <div class="input-group-prepend">
-              <span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
+              <span class="input-group-text"><i class="fas fa-user-alt"></i></span>
             </div>
             <input type="text" name="pseudo" id="pseudo" class="form-control" placeholder="Pseudonyme" autocomplete="username"/>
           </div>

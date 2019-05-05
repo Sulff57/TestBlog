@@ -94,17 +94,17 @@ else
   {
     ?><div class="col-lg-12">
         <p class="row"><?php
-        if (file_exists('uploads/avatars' . $row['id_auteur'] . '.png'))
+        if (file_exists('uploads/avatars/' . $row['id_auteur'] . '.png'))
         {
           echo '<b class="col-lg-1">' . htmlspecialchars($row['pseudo']) .
-          '<img class="avatar_pseudo" src="uploads/avatars/' . $row['id_auteur'] . '.png"></b> le ' . $row['date_jour']
+          '<img class="avatar_pseudo" src="uploads/avatars/' . $row['id_auteur'] . '.png"></b>le ' . $row['date_jour']
           . ' à ' . $row['date_heure']
           . "<br />";
         }
         else
         {
           echo '<b class="col-lg-1">' . htmlspecialchars($row['pseudo']) .
-          '<img class="avatar_pseudo" src="uploads/avatars/no_avatar.jpeg"></b> le ' . $row['date_jour']
+          '<img class="avatar_pseudo" src="uploads/avatars/no_avatar.jpeg"></b>le ' . $row['date_jour']
           . ' à ' . $row['date_heure']
           . "<br />";
         }

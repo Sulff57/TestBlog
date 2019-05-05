@@ -15,6 +15,7 @@ A FAIRE
 - Empêcher doublons pseudos
 - Résoudre problème upload avatars extension
 - Mettre option afficher "pseudo supprimé" si compte ayant posté inexistant
+- Ajouter option connexion automatique après inscription
 
 FACULTATIF
 - Laisser possibilité de régler la taille max de l'avatar (poids/dimensions) dans le pannel admin

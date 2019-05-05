@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 05 mai 2019 à 16:38
+-- Généré le :  Dim 05 mai 2019 à 22:54
 -- Version du serveur :  5.7.23
 -- Version de PHP :  7.2.10
 
@@ -68,7 +68,7 @@ DROP TABLE IF EXISTS `commentaires`;
 CREATE TABLE IF NOT EXISTS `commentaires` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_billet` int(11) NOT NULL,
-  `auteur` varchar(255) NOT NULL,
+  `id_auteur` smallint(6) DEFAULT NULL,
   `commentaire` text NOT NULL,
   `date_commentaire` datetime NOT NULL,
   PRIMARY KEY (`id`)
@@ -78,15 +78,15 @@ CREATE TABLE IF NOT EXISTS `commentaires` (
 -- Déchargement des données de la table `commentaires`
 --
 
-INSERT INTO `commentaires` (`id`, `id_billet`, `auteur`, `commentaire`, `date_commentaire`) VALUES
-(1, 1, 'M@teo21', 'Un peu court ce billet !', '2010-03-25 16:49:53'),
-(2, 1, 'Maxime', 'Oui, ça commence pas très fort ce blog...', '2010-03-25 16:57:16'),
-(3, 1, 'MultiKiller', '+1 !', '2010-03-25 17:12:52'),
-(4, 2, 'John', 'Preum\'s !', '2010-03-27 18:59:49'),
-(5, 2, 'Maxime', 'Excellente analyse de la situation !\r\nIl y arrivera plus tôt qu\'on ne le pense !', '2010-03-27 22:02:13'),
-(6, 1, 'Test2', '     Test', '0000-00-00 00:00:00'),
-(7, 1, 'Test2', 'Test2', '2019-04-20 00:24:02'),
-(8, 1, 'Test2', '', '2019-04-24 20:59:47');
+INSERT INTO `commentaires` (`id`, `id_billet`, `id_auteur`, `commentaire`, `date_commentaire`) VALUES
+(1, 1, 9, 'Un peu court ce billet !', '2010-03-25 16:49:53'),
+(2, 1, 10, 'Oui, ça commence pas très fort ce blog...', '2010-03-25 16:57:16'),
+(3, 1, 11, '+1 !', '2010-03-25 17:12:52'),
+(4, 2, 12, 'Preum\'s !', '2010-03-27 18:59:49'),
+(5, 2, 9, 'Excellente analyse de la situation !\r\nIl y arrivera plus tôt qu\'on ne le pense !', '2010-03-27 22:02:13'),
+(6, 1, 10, 'Test', '0000-00-00 00:00:00'),
+(7, 1, 11, 'Test2', '2019-04-20 00:24:02'),
+(8, 1, 12, 'Tout a fait', '2019-04-24 20:59:47');
 
 -- --------------------------------------------------------
 
@@ -101,51 +101,17 @@ CREATE TABLE IF NOT EXISTS `membres` (
   `mail` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `membres`
 --
 
 INSERT INTO `membres` (`id`, `pseudo`, `mail`, `password`) VALUES
-(1, 'test', 'valo@gmail.com', '$2y$10$aPIjcRlofqjW5VhwHMrjLesyzAdNhJ9zoVltY9RDDEe09sf9cpvz6'),
-(2, 'Test2', 'test2@gmail.com', '$2y$10$BODkfQDMEKwe9ke2L6982OqFNdeW4ClzdWcX8PYnvmoy26SFfOb1i'),
-(3, 'Test2', 'valo.brice@gmail.com', '$2y$10$YGPngsgElUOx7QgUI.cxbuTPaosYfOJ99rfqMYHei6g0NS89.iqaG'),
-(4, 'Test2', 'valo.brice@gmail.com', '$2y$10$BUYglpnZiEHhNR.D0M7hLejqgoyF0oyBfYWxRsKjGHKZyTXFQc58G');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `minichat`
---
-
-DROP TABLE IF EXISTS `minichat`;
-CREATE TABLE IF NOT EXISTS `minichat` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `pseudo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `message` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Déchargement des données de la table `minichat`
---
-
-INSERT INTO `minichat` (`ID`, `pseudo`, `message`, `date`) VALUES
-(1, 'Tom', 'Il fait beau aujourd\'hui, vous ne trouvez pas ?', '2019-03-29 23:34:56'),
-(2, 'John', 'Ouais, ça faisait un moment qu\'on n\'avait pas vu la lumière du soleil !', '2019-03-29 23:34:56'),
-(3, 'Sluf', 'eee', '2019-03-29 23:34:56'),
-(4, 'fezrzre', 'rezzer', '2019-03-29 23:34:56'),
-(5, 'ee', 'ee', '2019-03-29 23:34:56'),
-(6, 'eee', 'eee', '2019-03-29 23:34:56'),
-(7, 'Fefzz', '', '2019-03-29 23:34:56'),
-(8, 'eee', 'ee', '2019-03-29 23:34:56'),
-(9, 'fezrfzer', 'rezezr', '2019-03-29 23:34:56'),
-(10, 'fzerzer', 'rzzer', '2019-03-29 23:34:56'),
-(11, 'fzefez', 'erzrze', '2019-03-29 23:34:56'),
-(12, 'rzerzer', 'rezerze', '2019-03-29 23:34:56'),
-(13, 'fezfze', 'ferzfez', '2019-03-29 23:34:56');
+(9, 'Chouette', 'chouette@chouette.fr', '$2y$10$9LGXEzAeWoqSd68Wfjblju5YvOh82AYdrEcyFpaklm8I.v.QrMW2K'),
+(10, 'Hibou', 'hibou@hibou.fr', '$2y$10$LTyO0bg3wNChkDyGhw2IQeqVTvBriy3.KYs4FOlE7Ya2gC78/bY66'),
+(11, 'Arthur', 'arthur@arthur.fr', '$2y$10$lYW3OnCKrgHD7d2jtRDHXedmq6RPtObmWukoOMKUdZqsHAPcrEueC'),
+(12, 'Maxime', 'maxime@maxime.fr', '$2y$10$jkpblvmRJAM6BbJjXRXaROSjQ46Hz9ZmimQG7cl1M.IAjqYCHfHX.');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
