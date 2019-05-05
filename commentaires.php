@@ -34,7 +34,7 @@ try {
 
 try {
   $req = $db_session->prepare('
-  SELECT id, titre, contenu,
+  SELECT id, titre, contenu, source,
   DATE_FORMAT(date_creation, "%d/%m/%Y") AS date_jour,
   DATE_FORMAT(date_creation, "%Hh%imin%ss") AS date_heure
   FROM billets

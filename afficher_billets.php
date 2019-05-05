@@ -5,10 +5,14 @@ function afficher_billets($req, $pageAccueil=0)
   // Si on est sur la page d'accueil, on tronque l'article si celui-ci
   // est trop long est on rend le titre cliquable pour se rendre sur l'article
   // et on n'affiche pas la date et l'heure de publication
-  
+
   while ($billet = $req->fetch()) {
     $contenu_news = htmlspecialchars($billet['contenu']);
-    $id_news = htmlspecialchars($billet['id']);?>
+    $id_news = htmlspecialchars($billet['id']);
+    if (!$pageAccueil)
+    {
+      $source = htmlspecialchars($billet['source']);
+    }?>
     <article>
       <div class="news">
         <h3>
@@ -42,7 +46,14 @@ function afficher_billets($req, $pageAccueil=0)
             {
               echo htmlspecialchars($billet['contenu']) . "<br />";
             }
-            echo '<a href="commentaires.php?id_news=' . $id_news . ' ">Commentaires</a>';
+            if ($pageAccueil)
+            {
+              echo '<a href="commentaires.php?id_news=' . $id_news . ' ">Commentaires</a>';
+            }
+            else
+            {
+              echo '<a href="' . $source . '">Voir l\'article complet (source)</a>';
+            }
           ?>
         </p>
       </div>
