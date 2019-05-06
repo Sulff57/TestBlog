@@ -1,0 +1,14 @@
+#inscription{
+  background-color: white;
+  width: 36%;
+}
+
+#bouton_inscription{
+  color: white;
+  display: inline-block;
+  border-radius: 2px;
+  font-size: 14px;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 0.5em 1em 0.5em 1em;
+}

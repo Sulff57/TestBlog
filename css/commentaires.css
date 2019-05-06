@@ -1,0 +1,23 @@
+
+.container
+{
+  background-color: #E7ECEF;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.commentaires p
+{
+  background-color: #FFFFFF;
+  height: 7em;
+}
+
+.avatar_pseudo
+{
+  width: 5em;
+}
+
+.commentaire_contenu
+{
+
+}
