@@ -14,7 +14,10 @@ function afficher_billets($req, $pageAccueil=0)
       $source = htmlspecialchars($billet['source']);
     }?>
     <article class="row">
-      <div class="news col-lg-12">
+      <div class="col-md-2 d-none d-md-block">
+        <img class="illustrations_articles" alt="Illustration article" src="uploads/articles/illustrations/<?php echo $id_news; ?>.jpg" />
+      </div>
+      <div class="news col-md-10">
         <h3>
           <?php if ($pageAccueil)
           {
