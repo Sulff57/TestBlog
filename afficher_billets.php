@@ -15,9 +15,9 @@ function afficher_billets($req, $pageAccueil=0)
     }?>
     <article class="row">
       <div class="col-md-2 d-none d-md-block">
-        <img class="illustrations_articles" alt="Illustration article" src="uploads/articles/illustrations/<?php echo $id_news; ?>.jpg" />
+        <img class="illustrations_articles float-right" alt="Illustration article" src="uploads/articles/illustrations/<?php echo $id_news; ?>.jpg" />
       </div>
-      <div class="news col-md-10">
+      <div class="news col-md-10 float-left">
         <h3>
           <?php if ($pageAccueil)
           {

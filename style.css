@@ -1,3 +1,51 @@
+/* HEADER */
+
+#menu_principal{
+  background-color: #014359;
+  margin-bottom: 1em;
+}
+
+#lien_git_blog a
+{
+  color: red;
+  font-size: 2em;
+  text-decoration: none !important;
+}
+
+#menu_principal h1 a
+{
+  color: orange;
+}
+
+#login
+{
+  text-align: right;
+}
+
+#session
+{
+  margin-right: 1em;
+  color: white;
+}
+
+#session a
+{
+  text-decoration: none;
+  color: white;
+}
+
+#icone_login
+{
+  margin-right: 0.5em;
+}
+
+#icone_logout
+{
+  margin-left: 0.5em;
+}
+
+/* BODY / PAGE ACCUEIL */
+
 h1, h3
 {
   text-align:center;
@@ -8,66 +56,18 @@ body {
   background-color: #D7DFE2 !important;
 }
 
-#lien_git_blog a
-{
-  color: red;
-  font-size: 2em;
-  text-decoration: none !important;
-}
-
 article h3 a
 {
   text-decoration: none !important;
   color: white !important;
 }
 
-#menu_principal h1 a
-{
-  color: orange;
-}
-
-#mon_profil
-{
-  border: 1px solid black;
-  width: 50%;
-  padding-top: 2em;
-  padding-bottom: 2em;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
 .news h3
 {
   background-color: black;
   color: white;
   font-size: 0.9em;
   margin-bottom: 0px;
-}
-
-
-
-#menu_principal{
-  background-color: #014359;
-  margin: auto;
-	list-style-type: none;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  margin-bottom: 1em;
-}
-
-#menu_principal nav{
-  padding-top: 0.5em;
-  margin-right: 1em;
-}
-
-#menu_principal nav a{
-  color: white;
-  margin-left: auto;
-}
-
-#menu_principal:first-child{
-  align-self:center;
 }
 
 .news p
@@ -77,14 +77,10 @@ article h3 a
 }
 
 
-.news a
-{
-  text-decoration: none;
-  color: blue;
-}
-
 .form-mise-en-page
 {
   background-color:#CCC;
   padding: 20px;
 }
+
+/* FIN BODY / PAGE ACCUEIL */

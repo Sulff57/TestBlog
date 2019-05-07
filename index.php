@@ -18,15 +18,8 @@
     require('connexion_bdd.php');
     require('afficher_billets.php');
     require('verif_session.php');
-    ?>
-
-    <header class="row">
-      <div class="col-lg-12">
-        <?php include('html_parts/header.php');?>
-      </div>
-    </header>
-
-    <?php
+    
+    include('html_parts/header.php');
 
     if (!empty($_GET['page']))
     {
