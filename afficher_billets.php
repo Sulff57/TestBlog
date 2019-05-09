@@ -13,11 +13,11 @@ function afficher_billets($req, $pageAccueil=0)
     {
       $source = htmlspecialchars($billet['source']);
     }?>
-    <article class="row">
+    <article class="flex-row d-flex justify-content-center">
       <div class="col-md-2 d-none d-md-block">
-        <img class="illustrations_articles float-right" alt="Illustration article" src="uploads/articles/illustrations/<?php echo $id_news; ?>.jpg" />
+        <img class="illustrations_articles rounded" alt="Illustration article" src="uploads/articles/illustrations/<?php echo $id_news; ?>.jpg" />
       </div>
-      <div class="news col-md-10 float-left">
+      <div class="news col-md-10">
         <h3>
           <?php if ($pageAccueil)
           {

@@ -1,5 +1,6 @@
 A FAIRE
 
+BACK
 - Vérifier si code fonctionnel quand 0 News et 0 commentaires existants.
 - Rechercher la ligne commentrée avec "!!!" et faire la modification correspondante.
 - Rajouter message pour indiquer la taille maximale de l'avatar à envoyer et les formats acceptés
@@ -16,6 +17,10 @@ A FAIRE
 - Résoudre problème upload avatars extension
 - Mettre option afficher "pseudo supprimé" si compte ayant posté inexistant
 - Ajouter option connexion automatique après inscription
+
+FRONT
+- Corriger affichage responsive
+- Texte articles justifié
 
 FACULTATIF
 - Laisser possibilité de régler la taille max de l'avatar (poids/dimensions) dans le pannel admin

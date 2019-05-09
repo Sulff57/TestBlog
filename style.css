@@ -44,9 +44,24 @@
   margin-left: 0.5em;
 }
 
-/* BODY / PAGE ACCUEIL */
+nav
+{
+  font-size: 2em;
+}
 
-h1, h3
+nav a
+{
+  color: white;
+}
+
+nav a:hover
+{
+  color: orange;
+}
+
+/* BODY */
+
+body h1, body h3
 {
   text-align:center;
 }
@@ -60,6 +75,13 @@ article h3 a
 {
   text-decoration: none !important;
   color: white !important;
+}
+
+.illustrations_articles
+{
+  max-width: 72%;
+  cursor: pointer;
+  margin-left: 60px;
 }
 
 .news h3
