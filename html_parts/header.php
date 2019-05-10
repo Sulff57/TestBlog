@@ -1,5 +1,4 @@
-<header>
-  <div id="menu_principal" class="row align-items-center">
+<header id="menu_principal" class="row align-items-center">
     <h1 class="col-md-2">
       <a href="index.php"><img src="images/logos/logo_TestBlog.png"/></a>
     </h1>
@@ -19,5 +18,4 @@
         }
       ?></span>
     </section>
-  </div>
 </header>

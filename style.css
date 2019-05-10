@@ -1,5 +1,6 @@
 /* HEADER */
 
+
 #menu_principal{
   background-color: #014359;
   margin-bottom: 1em;
@@ -81,7 +82,6 @@ article h3 a
 {
   max-width: 72%;
   cursor: pointer;
-  margin-left: 60px;
 }
 
 .news h3
