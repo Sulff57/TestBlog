@@ -14,48 +14,52 @@ function afficher_billets($req, $pageAccueil=0)
       $source = htmlspecialchars($billet['source']);
     }?>
     <article class="row">
-      <div class="col-md-2">
-        <img class="illustrations_articles rounded" alt="Illustration article" src="uploads/articles/illustrations/<?php echo $id_news; ?>.jpg" />
-      </div>
-      <div class="news col-md-10">
-        <h3>
-          <?php if ($pageAccueil)
-          {
-            $titre_billet = htmlspecialchars($billet['titre']);
-            echo '<a href="commentaires.php?id_news=' . $id_news . ' ">' . $titre_billet . '</a>';
-          }
-          else
-          {
-            echo htmlspecialchars($billet['titre']);
-          }
-          echo "<i> le " . htmlspecialchars($billet['date_jour'])
-          . ' à ' . htmlspecialchars($billet['date_heure'])
-          . "</i><br />"; ?>
-        </h3>
-        <p class="col-lg-12">
-          <?php
-            if ($pageAccueil)
-            {
-              if (strlen($contenu_news) > 600)
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-12">
+            <img class="illustrations_articles rounded" alt="Illustration article" src="uploads/articles/illustrations/<?php echo $id_news; ?>.jpg" />
+          </div>
+          <div class="news col-md-12">
+            <h3>
+              <?php if ($pageAccueil)
               {
-                echo '<a id="contenu_article" href="commentaires.php?id_news=' . $id_news . ' ">' . (substr($contenu_news, 0, 600) . "..." . "<br />") . '</a>';
+                $titre_billet = htmlspecialchars($billet['titre']);
+                echo '<a href="commentaires.php?id_news=' . $id_news . ' ">' . $titre_billet . '</a>';
               }
               else
               {
-                echo $contenu_news . "<br />";
+                echo htmlspecialchars($billet['titre']);
               }
-            }
-            else
-            {
-              echo htmlspecialchars($billet['contenu']) . "<br />";
-            }
-            // Si on est sur la page de l'article, on rajoute un lien pointant vers la source
-            if (!$pageAccueil)
-            {
-              echo '<a href="' . $source . '">Voir l\'article complet (source)</a>';
-            }
-          ?>
-        </p>
+              echo "<i> le " . htmlspecialchars($billet['date_jour'])
+              . ' à ' . htmlspecialchars($billet['date_heure'])
+              . "</i><br />"; ?>
+            </h3>
+            <p class="col-lg-12">
+              <?php
+                if ($pageAccueil)
+                {
+                  if (strlen($contenu_news) > 600)
+                  {
+                    echo '<a id="contenu_article" href="commentaires.php?id_news=' . $id_news . ' ">' . (substr($contenu_news, 0, 600) . "..." . "<br />") . '</a>';
+                  }
+                  else
+                  {
+                    echo $contenu_news . "<br />";
+                  }
+                }
+                else
+                {
+                  echo htmlspecialchars($billet['contenu']) . "<br />";
+                }
+                // Si on est sur la page de l'article, on rajoute un lien pointant vers la source
+                if (!$pageAccueil)
+                {
+                  echo '<a href="' . $source . '">Voir l\'article complet (source)</a>';
+                }
+              ?>
+            </p>
+          </div>
+        </div>
       </div>
     </article>
     <?php
