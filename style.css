@@ -74,13 +74,19 @@ body {
 
 article h3 a
 {
-  text-decoration: none !important;
-  color: white !important;
+  text-decoration: none;
+  color: white;
+}
+
+article h3 a:hover
+{
+    text-decoration: none;
+  color: orange;
 }
 
 .illustrations_articles
 {
-  max-width: 72%;
+  max-width: 100%;
   cursor: pointer;
 }
 
@@ -96,6 +102,17 @@ article h3 a
 {
   background-color:#FFFFFF;
   margin-top:0px;
+}
+
+#contenu_article
+{
+  text-decoration: none;
+  color: black;
+}
+
+#contenu_article:hover
+{
+  color: gray;
 }
 
 

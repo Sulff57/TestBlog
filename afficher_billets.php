@@ -13,8 +13,8 @@ function afficher_billets($req, $pageAccueil=0)
     {
       $source = htmlspecialchars($billet['source']);
     }?>
-    <article class="flex-row d-flex justify-content-center">
-      <div class="col-md-2 d-none d-md-block">
+    <article class="row">
+      <div class="col-md-2">
         <img class="illustrations_articles rounded" alt="Illustration article" src="uploads/articles/illustrations/<?php echo $id_news; ?>.jpg" />
       </div>
       <div class="news col-md-10">
@@ -36,9 +36,9 @@ function afficher_billets($req, $pageAccueil=0)
           <?php
             if ($pageAccueil)
             {
-              if (strlen($contenu_news) > 300)
+              if (strlen($contenu_news) > 600)
               {
-                echo substr($contenu_news, 0, 300) . "..." . "<br />";
+                echo '<a id="contenu_article" href="commentaires.php?id_news=' . $id_news . ' ">' . (substr($contenu_news, 0, 600) . "..." . "<br />") . '</a>';
               }
               else
               {
@@ -49,11 +49,8 @@ function afficher_billets($req, $pageAccueil=0)
             {
               echo htmlspecialchars($billet['contenu']) . "<br />";
             }
-            if ($pageAccueil)
-            {
-              echo '<a href="commentaires.php?id_news=' . $id_news . ' ">Commentaires</a>';
-            }
-            else
+            // Si on est sur la page de l'article, on rajoute un lien pointant vers la source
+            if (!$pageAccueil)
             {
               echo '<a href="' . $source . '">Voir l\'article complet (source)</a>';
             }
