@@ -15,7 +15,7 @@ require('verif_session.php');
 
 <?php
   require('connexion_bdd.php');
-  require('afficher_billets.php');
+  require('afficher_billet_seul.php');
 ?>
 <body>
   <div class="container">
@@ -56,7 +56,7 @@ try {
   $e->getMessage());
 }
 ?><section><?php
-afficher_billets($req);?>
+afficher_billet_seul($req);?>
 </section><?php
 
 try {

@@ -86,7 +86,7 @@ article h3 a:hover
 
 .illustrations_articles
 {
-  max-width: 100%;
+  width: 100%;
   cursor: pointer;
 }
 
@@ -100,19 +100,17 @@ article h3 a:hover
 
 .news p
 {
-  background-color:#FFFFFF;
-  margin-top:0px;
+  background-color: white;
+  margin-top: 0px;
+  height: 175px;
 }
 
-#contenu_article
-{
-  text-decoration: none;
-  color: black;
-}
 
-#contenu_article:hover
+#paragraphe_article:hover
 {
   color: gray;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 
