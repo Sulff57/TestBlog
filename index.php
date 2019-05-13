@@ -18,7 +18,7 @@
     require('connexion_bdd.php');
     require('afficher_billets.php');
     require('verif_session.php');
-    
+
     include('html_parts/header.php');
 
     if (!empty($_GET['page']))
@@ -86,30 +86,66 @@
 
     ?>
     <section><?php
-    afficher_billets($req, 1);
+    afficher_billets($req);
     ?></section>
 
-    <div class="row">
-      <div class="col-lg-1">
-        <div class="btn-group">
-          <a class="btn btn-danger" href="index.php?page=0"><i class="fas fa-fast-backward"></i></a>
-          <a class="btn btn-success" href="index.php?page=<?php echo ($pageAffichee - 1); ?>"><i class="fas fa-backward"></i></a>
-        </div>
-      </div>
-      <div class="col-lg-1 text-center"><?php
+    <nav id="nav_pagination">
+      <ul class="pagination pagination-lg justify-content-center"><?php
+        // Bouton précédent, actif ou non selon la page
+        if ($pageAffichee == 1) {
+          echo '<li class="page-item disabled">';
+          echo '<a class="page-link" href="#" tabindex="-1">Précédent</a>';
+          echo '</li>';
+          echo '<li class="page-item active">';
+          echo '<a class="page-link" href="#">1<span class="sr-only">(page actuelle)</span></a>';
+          echo '</li>';
+          echo '<li class="page-item">';
+          echo '<a class="page-link" href="index.php?page=2">2</a>';
+          echo '</li>';
+          echo '<li class="page-item">';
+          echo '<a class="page-link" href="index.php?page=3">3</a>';
+          echo '</li>';
+          echo '<li class="page-item">';
+          echo '<a class="page-link" href="index.php?page=' . ($pageAffichee + 1) . '">Suivant</a>';
+          echo '</li>';
+        }
+        elseif ($pageAffichee == 2) {
+          echo '<li class="page-item">';
+          echo '<a class="page-link" href="index.php?page=1">Précédent</a>';
+          echo '</li>';
+          echo '<li class="page-item">';
+          echo '<a class="page-link" href="index.php?page=1">1</a>';
+          echo '</li>';
+          echo '<li class="page-item active">';
+          echo '<a class="page-link" href="#">2<span class="sr-only">(page actuelle)</span></a>';
+          echo '</li>';
+          echo '<li class="page-item">';
+          echo '<a class="page-link" href="index.php?page=3">3</a>';
+          echo '</li>';
+          echo '<li class="page-item">';
+          echo '<a class="page-link" href="index.php?page=' . ($pageAffichee + 1) . '">Suivant</a>';
+          echo '</li>';
+          }
+        elseif ($pageAffichee == 3) {
+          echo '<li class="page-item">';
+          echo '<a class="page-link" href="index.php?page=1">Précédent</a>';
+          echo '</li>';
+          echo '<li class="page-item">';
+          echo '<a class="page-link" href="index.php?page=1">1</a>';
+          echo '</li>';
+          echo '<li class="page-item">';
+          echo '<a class="page-link" href="index.php?page=2">2</a>';
+          echo '</li>';
+          echo '<li class="page-item active">';
+          echo '<a class="page-link" href="#">3<span class="sr-only">(page actuelle)</span></a>';
+          echo '</li>';
+          echo '<li class="page-item disabled">';
+          echo '<a class="page-link" href="#" tabindex="-1">Suivant</a>';
+          echo '</li>';
+        }?>
+      </ul>
 
-      for ($x = 0; $x<=$nombrePages; $x++)
-      {
-        echo('<a id="pagination" href="index.php?page=' . $x . '">' . $x . '</a>');
-      }
-      ?></div>
-      <div class="col-lg-1">
-        <div class="btn-group">
-          <a class="btn btn-success" href="index.php?page=<?php echo ($pageAffichee + 1); ?>"><i class="fas fa-forward"></i></a>
-          <a class="btn btn-danger" href="index.php?page=<?php echo $nombrePages; ?>"><i class="fas fa-fast-forward"></i></a>
-        </div>
-      </div>
-    </div>
+
 
   </div>
 <?php require('html_parts/charger_CDN_bootstrap.html');?>
