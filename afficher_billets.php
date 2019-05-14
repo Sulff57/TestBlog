@@ -7,23 +7,30 @@ function afficher_billets($req)
     $id_news = htmlspecialchars($billet['id']);
     $titre_billet = htmlspecialchars($billet['titre']);?>
 
-    <div class="col-md-6">
+    <div class="col-md-6" onclick="document.location='commentaires.php?id_news=<?php echo $id_news;?>'">
       <div class="row">
         <div class="col-md-12">
-          <img class="illustrations_articles rounded" alt="Illustration article" src="uploads/articles/illustrations/<?php echo $id_news; ?>.jpg" />
+          <div id="container_article" class="overflow-hidden rounded">
+            <img class="illustrations_articles" alt="Illustration article" src="uploads/articles/illustrations/<?php echo $id_news; ?>.jpg" />
+            <div class="col-md-12" id="div_titres_billets"><?php
+              echo '<p id="ligne_titre_billet" class="col-lg-12 overflow-hidden">';
+              echo '<span id="titre_article"><b>' . $titre_billet . '</b></span>';
+              echo '</p>';?>
+            </div>
+            <div class="news col-md-12" id="div_contenu_article">
+                <?php
+                // echo "<i> le " . htmlspecialchars($billet['date_jour'])
+                // . ' à ' . htmlspecialchars($billet['date_heure'])
+                // . "</i><br />"; ?>
+              <p id="paragraphe_article" class="col-lg-12">
+                <?php
+                  echo '<span id="contenu_article" >' . (substr($contenu_news, 0, 200) . "..." . "<br />") . '</span>';
+                ?>
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="news col-md-12">
-            <?php
-            // echo "<i> le " . htmlspecialchars($billet['date_jour'])
-            // . ' à ' . htmlspecialchars($billet['date_heure'])
-            // . "</i><br />"; ?>
-          <p id="paragraphe_article" class="col-lg-12 overflow-hidden" onclick="document.location='commentaires.php?id_news=<?php echo $id_news;?>'">
-            <?php
-              echo '<b class="titres_billets">' . $titre_billet . '</a></b><br />';
-              echo '<span id="contenu_article" >' . (substr($contenu_news, 0, 800) . "..." . "<br />") . '</span>';
-            ?>
-          </p>
-        </div>
+
       </div>
     </div>
     <?php

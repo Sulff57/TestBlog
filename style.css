@@ -80,9 +80,10 @@ article h3 a
 
 article h3 a:hover
 {
-    text-decoration: none;
+  text-decoration: none;
   color: orange;
 }
+
 
 .illustrations_articles
 {
@@ -90,19 +91,43 @@ article h3 a:hover
   cursor: pointer;
 }
 
-.news h3
+#div_titres_billets
 {
-  background-color: black;
-  color: white;
-  font-size: 0.9em;
+  margin-bottom: 0;
+  font-size: 1.2em;
   margin-bottom: 0px;
+  cursor: pointer;
+}
+
+#div_titres_billets p
+{
+  margin-bottom: 0;
+  text-align: justify;
+}
+
+#div_titres_billets p:first-line
+{
+  text-align: center;
 }
 
 .news p
 {
-  background-color: white;
   margin-top: 0px;
-  height: 175px;
+  height: 5vh;
+  text-align: justify;
+}
+
+#paragraphe_article
+{
+  height: 12vh;
+  overflow: hidden;
+}
+#container_article
+{
+  background-color: white;
+  height: 27vh;
+  margin-bottom: 5vh;
+  overflow: hidden;
 }
 
 
