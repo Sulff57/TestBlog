@@ -119,15 +119,16 @@ article h3 a:hover
 
 #paragraphe_article
 {
-  height: 12vh;
+  height: 6.5vh;
   overflow: hidden;
 }
 #container_article
 {
   background-color: white;
-  height: 27vh;
+  height: 28vh;
   margin-bottom: 5vh;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 
@@ -138,6 +139,20 @@ article h3 a:hover
   cursor: pointer;
 }
 
+#articles_icones
+{
+  font-size: 0.90em;
+  color: grey;
+  align-self: end;
+  position: absolute;
+  bottom: 1.5vh;
+  width:  92%;
+}
+
+#col_container
+{
+  height: 29vh;
+}
 
 .form-mise-en-page
 {

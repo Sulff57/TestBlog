@@ -66,7 +66,7 @@
       $req = $db_session->prepare('
       SELECT id, titre, contenu,
       DATE_FORMAT(date_creation, "%d/%m/%Y") AS date_jour,
-      DATE_FORMAT(date_creation, "%Hh%imin%ss") AS date_heure
+      DATE_FORMAT(date_creation, "%H:%i") AS date_heure
       FROM billets
       LIMIT :minInterval, :nbBilletsAffiches;
       '
