@@ -88,7 +88,6 @@ article h3 a:hover
 .illustrations_articles
 {
   width: 100%;
-  cursor: pointer;
 }
 
 #div_titres_billets
@@ -96,7 +95,6 @@ article h3 a:hover
   margin-bottom: 0;
   font-size: 1.2em;
   margin-bottom: 0px;
-  cursor: pointer;
 }
 
 #div_titres_billets p
@@ -136,7 +134,6 @@ article h3 a:hover
 {
   color: gray;
   text-decoration: none;
-  cursor: pointer;
 }
 
 #articles_icones
@@ -152,6 +149,7 @@ article h3 a:hover
 #col_container
 {
   height: 29vh;
+  cursor: pointer;
 }
 
 .form-mise-en-page
