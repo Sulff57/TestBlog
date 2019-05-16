@@ -1,9 +1,35 @@
 /* HEADER */
-
-
-#menu_principal{
+#top_menu_banniere
+{
+  height: 5.5vh;
+  padding-left: 20.6vw;
   background-color: #014359;
-  margin-bottom: 1em;
+  padding-right: 20.6vw;
+}
+
+#zone_navigation li
+{
+  margin-right: 1vw;
+}
+
+#zone_login
+{
+  font-size: 0.5em;
+}
+
+nav
+{
+  font-size: 2em;
+}
+
+nav a
+{
+  color: white;
+}
+
+nav a:hover
+{
+  color: orange;
 }
 
 #lien_git_blog a
@@ -11,11 +37,6 @@
   color: red;
   font-size: 2em;
   text-decoration: none !important;
-}
-
-#menu_principal h1 a
-{
-  color: orange;
 }
 
 #login
@@ -45,20 +66,7 @@
   margin-left: 0.5em;
 }
 
-nav
-{
-  font-size: 2em;
-}
 
-nav a
-{
-  color: white;
-}
-
-nav a:hover
-{
-  color: orange;
-}
 
 /* BODY */
 
@@ -68,7 +76,7 @@ body h1, body h3
 }
 
 body {
-  padding-top: 10px;
+  padding-top: 7vh;
   background-color: #D7DFE2 !important;
 }
 
