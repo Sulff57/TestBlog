@@ -1,7 +1,7 @@
 /* HEADER */
 #top_menu_banniere
 {
-  height: 5.5vh;
+  height: 6.1vh;
   padding-left: 20.6vw;
   background-color: #014359;
   padding-right: 20.6vw;
@@ -10,6 +10,11 @@
 #zone_navigation li
 {
   margin-right: 1vw;
+}
+
+.nav-item:hover:not(:first-child)
+{
+  background-color: #E88228;
 }
 
 #zone_login
@@ -22,14 +27,19 @@ nav
   font-size: 2em;
 }
 
-nav a
+#top_menu_banniere a
 {
-  color: white;
+  color: white !important;
 }
 
-nav a:hover
+#zone_login a
 {
-  color: orange;
+  color: #CACFD2 !important;
+}
+
+#zone_login a:hover
+{
+  color: white !important;
 }
 
 #lien_git_blog a
