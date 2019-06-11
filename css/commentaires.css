@@ -1,181 +1,48 @@
-
 .container
 {
   background-color: #E7ECEF;
-  margin-left: auto !important;
-  margin-right: auto !important;
+
 }
 
-.commentaires p
+.commentaires .row
 {
   background-color: #FFFFFF;
-  height: 7em;
+  margin-bottom: 1vh;
+  min-height: 9vh;
 }
 
-.avatar_pseudo
+
+#bandeau_pseudo
 {
-  width: 5em;
+  font-family: "Ubuntu Condensed","Segoe UI",Verdana,Helvetica,Sans-Serif !important;
+  height: 1vh;
 }
 
-.commentaire_contenu
+.pseudo_commentaire
 {
-
-}
-/* HEADER */
-
-
-#menu_principal{
-  background-color: #014359;
-  margin-bottom: 1em;
+  color: #1f7eaa;
 }
 
-#lien_git_blog a
+
+
+.date_commentaire
 {
-  color: red;
-  font-size: 2em;
-  text-decoration: none !important;
+  color: #7d8288;
+  font-size: 0.85em;
 }
 
-#menu_principal h1 a
-{
-  color: orange;
-}
-
-#login
-{
-  text-align: right;
-}
-
-#session
-{
-  margin-right: 1em;
-  color: white;
-}
-
-#session a
-{
-  text-decoration: none;
-  color: white;
-}
-
-#icone_login
-{
-  margin-right: 0.5em;
-}
-
-#icone_logout
-{
-  margin-left: 0.5em;
-}
-
-nav
-{
-  font-size: 2em;
-}
-
-nav a
-{
-  color: white;
-}
-
-nav a:hover
-{
-  color: orange;
-}
-
-/* BODY */
-
-body h1, body h3
-{
-  text-align:center;
-}
-
-body {
+#avatar{
+  padding: 0;
+  margin-right: 1vw;
   padding-top: 10px;
-  background-color: #D7DFE2 !important;
+  padding-left: 10px;
 }
 
-article h3 a
-{
-  text-decoration: none;
-  color: white;
-}
-
-article h3 a:hover
-{
-  text-decoration: none;
-  color: orange;
-}
-
-
-.illustrations_articles
-{
+.avatar_pseudo{
   width: 100%;
-  cursor: pointer;
 }
 
-#div_titres_billets
-{
-  margin-bottom: 0;
-  font-size: 1.2em;
-  margin-bottom: 0px;
-  cursor: pointer;
+.commentaire_contenu{
+  position: relative;
+  top: -15px;
 }
-
-#div_titres_billets p
-{
-  margin-bottom: 0;
-  text-align: justify;
-}
-
-#div_titres_billets p:first-line
-{
-  text-align: center;
-}
-
-.news p
-{
-  margin-top: 0px;
-  height: 5vh;
-  text-align: justify;
-}
-
-#paragraphe_article
-{
-  height: 6.5vh;
-  overflow: hidden;
-}
-#container_article
-{
-  background-color: white;
-  height: 28vh;
-  margin-bottom: 5vh;
-  overflow: hidden;
-  border-radius: 10px;
-}
-
-
-#paragraphe_article:hover
-{
-  color: gray;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-#articles_icones
-{
-  font-size: 0.90em;
-  color: grey;
-  align-self: end;
-  position: absolute;
-  bottom: 6vh;
-  width:  92%;
-}
-
-.form-mise-en-page
-{
-  background-color:#CCC;
-  padding: 20px;
-}
-
-/* FIN BODY / PAGE ACCUEIL */

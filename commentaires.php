@@ -7,9 +7,11 @@ require('verif_session.php');
     <meta charset="utf-8">
     <meta name="robots" content="noindex" />
     <link rel="stylesheet" href="css/commentaires.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Commentaires du billet</title>
+        <title>Commentaires du billet</title>
 </head>
 
 <?php
@@ -18,12 +20,7 @@ require('verif_session.php');
 ?>
 <body>
   <div class="container">
-    <header class="row">
-      <div class="col-lg-12">
-        <?php include('html_parts/header.php');?>
-      </div>
-    </header>
-<?php
+    <?php include('html_parts/header.php');
 
 try {
   if ($_GET['id_news']) //rajouter condition pour verifier si id news existante avant d'afficher
@@ -82,34 +79,41 @@ try {
     ?><h2>Commentaires</h2><?php
 
 $rows = $req2->fetchAll();
-if (count($rows) == 0) // !!! A MODIFIER : SI PAS DE COMMENTAIRES EXISTANTS PROVOQUE UNE FAUSSE ERREUR !!!
+if (count($rows) == 0) // !!! A MODIFIER : SI PAS DE COMMENTAIRES EXISTANTS PROVOQUE UNE FAUSSE ERREUR
 {
   echo("Erreur: numéro de billet invalide.");
 }
 else
 {
-  ?><aside class="commentaires row"><?php
+  ?><aside class="commentaires"><?php
   foreach ($rows as $row)
   {
-    ?><div class="col-lg-12">
-        <p class="row"><?php
+    ?><div class="row"><?php
         if (file_exists('uploads/avatars/' . $row['id_auteur'] . '.png'))
         {
-          echo '<b class="col-lg-1">' . htmlspecialchars($row['pseudo']) .
-          '<img class="avatar_pseudo" src="uploads/avatars/' . $row['id_auteur'] . '.png"></b>le ' . $row['date_jour']
-          . ' à ' . $row['date_heure']
-          . "<br />";
+          // echo '<b class="col-lg-1">' . htmlspecialchars($row['pseudo']) .
+          echo '<div class="col-lg-1" id="avatar"><img class="avatar_pseudo" src="uploads/avatars/' . $row['id_auteur'] . '.png"></div>';
+          echo '<div class="row" id="texte_apres_avatar">';
+          echo '<div class="col-lg-12" id="bandeau_pseudo">';
+          echo '<span class="pseudo_commentaire font-weight-bold">';
+          echo $row['pseudo'];
+          echo '</span>';
+          echo '<span class="date_commentaire">';
+          echo ' - le ' . $row['date_jour'] . ' à ' . $row['date_heure'];
+          echo '</span>';
+          echo '</div>';
+          // . "<br />";
         }
         else
         {
-          echo '<b class="col-lg-1">' . htmlspecialchars($row['pseudo']) .
-          '<img class="avatar_pseudo" src="uploads/avatars/no_avatar.jpeg"></b>le ' . $row['date_jour']
-          . ' à ' . $row['date_heure']
-          . "<br />";
+          // echo '<b class="col-lg-1">' . htmlspecialchars($row['pseudo']) .
+          // '<img class="avatar_pseudo" src="uploads/avatars/no_avatar.jpeg"></b>le ' . $row['date_jour']
+          // . ' à ' . $row['date_heure']
+          // . "<br />";
         }
-          echo htmlspecialchars($row['commentaire']) . "\n\n\n\n";
+          echo '<div class="col-lg-12 commentaire_contenu">' . htmlspecialchars($row['commentaire']) . '</div>';
+          echo '</div>';
           ?>
-        </p>
       </div>
     <?php
   }
@@ -135,5 +139,6 @@ pouvoir y insérer le commentaire également renvoyé dans celui-ci-->
       </p>
     </form>
   </div>
+    <?php require('html_parts/charger_CDN_bootstrap.html');?>
 </body>
 </html>
