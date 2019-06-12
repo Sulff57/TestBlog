@@ -75,10 +75,13 @@ try {
   Message :<br/>' .
   $e->getMessage());
 }
-
-    ?><h2>Commentaires</h2><?php
-
 $rows = $req2->fetchAll();
+// On indique le nombre de commentaires qu'on obtient à partir du nombre de champs
+// retournés
+
+    ?><h5 id="bandeau_commentaires"><span class="align-middle" id="contenu_bandeau"><i class="far fa-comments"></i><?php echo ' ' . count($rows); ?> commentaires</span></h5><?php
+
+
 if (count($rows) == 0) // !!! A MODIFIER : SI PAS DE COMMENTAIRES EXISTANTS PROVOQUE UNE FAUSSE ERREUR
 {
   echo("Erreur: numéro de billet invalide.");
@@ -88,7 +91,7 @@ else
   ?><aside class="commentaires"><?php
   foreach ($rows as $row)
   {
-    ?><div class="row"><?php
+    ?><div class="row mx-2"><?php
         if (file_exists('uploads/avatars/' . $row['id_auteur'] . '.png'))
         {
           // echo '<b class="col-lg-1">' . htmlspecialchars($row['pseudo']) .
