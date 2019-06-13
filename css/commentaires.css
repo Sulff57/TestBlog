@@ -87,3 +87,9 @@ article{
   position: relative;
   top: -10px;
 }
+
+#no_avatar_img{
+  width: 100%;
+}
+
+*{border: 1px solid black;}

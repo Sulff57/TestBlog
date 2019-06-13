@@ -121,27 +121,24 @@ else
     <?php
   }
   ?></aside><?php
-}
-?>
+}?>
 
 <!-- On fait passer l'id du billet en paramètre caché pour
 pouvoir y insérer le commentaire également renvoyé dans celui-ci-->
-    <form action="commentaires_post.php" method="post">
+<?php
+  if (!verif_session()){
+    ?><form id="form_poster_commentaire" action="commentaires_post.php" method="post">
       <p>
         <label for="commentaire">Votre commentaire :</label></br>
-        <textarea name="commentaire" id="commentaire" rows="5" cols="50" <?php
-          // Si session invalide, on grize la zone de commentaires et on affiche le message correspondant à l'intérieur.
-          if (!verif_session()) { echo "disabled>Pour poster un commentaire, vous devez vous identifier."; }
-          // Sinon, on referme simplement la balise <textarea>
-          else { echo ">"; }
-        ?></textarea><br />
+        <textarea name="commentaire" id="commentaire" rows="5" cols="50" disabled>Pour poster un commentaire, vous devez vous identifier."</textarea>
+        <br />
         <input type="hidden" id="id_news" name="id_news" value="<?php echo $id_news; ?>">
-        <input type="submit" value="Envoyer" <?php
-          // Si session invalide, on désactive le bouton de soumission de formulaire.
-          if (!verif_session()) { echo "disabled"; } ?>/>
+        <input type="submit" value="Envoyer" disabled>
       </p>
-    </form>
+    </form><?php
+  }?>
   </div>
+
     <?php require('html_parts/charger_CDN_bootstrap.html');?>
 </body>
 </html>
