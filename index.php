@@ -149,4 +149,5 @@
 
     </div>
   <?php require('html_parts/charger_CDN_bootstrap.html');?>
+    <?php include("../guests_management.php"); ?>
   </body>

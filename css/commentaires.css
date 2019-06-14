@@ -79,7 +79,7 @@ article{
   padding-left: 10px;
 }
 
-.avatar_pseudo{
+.avatar_pseudo, #no_avatar_img{
   width: 100%;
 }
 
@@ -88,8 +88,21 @@ article{
   top: -10px;
 }
 
-#no_avatar_img{
-  width: 100%;
+#form_poster_commentaire{
+  margin-top: 4vh;
 }
 
-*{border: 1px solid black;}
+#no_avatar_no_login{
+  padding: 0;
+  margin-right: 1vw;
+}
+
+#label_no_login{
+  color: #26aae2;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#commentaire_no_login{
+  font-style: italic;
+}

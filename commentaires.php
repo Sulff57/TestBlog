@@ -128,14 +128,25 @@ pouvoir y insérer le commentaire également renvoyé dans celui-ci-->
 <?php
   if (!verif_session()){
     ?><form id="form_poster_commentaire" action="commentaires_post.php" method="post">
-      <p>
-        <label for="commentaire">Votre commentaire :</label></br>
-        <textarea name="commentaire" id="commentaire" rows="5" cols="50" disabled>Pour poster un commentaire, vous devez vous identifier."</textarea>
-        <br />
-        <input type="hidden" id="id_news" name="id_news" value="<?php echo $id_news; ?>">
-        <input type="submit" value="Envoyer" disabled>
-      </p>
+      <div class="row mx-2" id="div_commentaire_no_login">
+        <div class="col-lg-1" id="no_avatar_no_login">
+          <img src="uploads/avatars/no_avatar.jpeg" id="no_avatar_img" alt="pas d'avatar"/>
+        </div>
+        <div class="col-lg-10">
+          <div class="row">
+            <label class="col-lg-12" id="label_no_login">Votre commentaire :</label>
+            <textarea class="col-lg-12" name="commentaire" id="commentaire_no_login" rows="2" disabled>Pour poster un commentaire, vous devez vous identifier.</textarea>
+          </div>
+        </div>
+      </div>
+
+
+
+      <input type="submit" value="Connexion">
     </form><?php
+  }
+  else{
+    ?>      <input type="hidden" id="id_news" name="id_news" value="<?php echo $id_news; ?>"><?php
   }?>
   </div>
 

@@ -1,28 +1,11 @@
-A FAIRE
+TODOLIST
 
-BACK
-- Vérifier si code fonctionnel quand 0 News et 0 commentaires existants.
-- Rechercher la ligne commentrée avec "!!!" et faire la modification correspondante.
-- Rajouter message pour indiquer la taille maximale de l'avatar à envoyer et les formats acceptés
-- Possibilité configurer chemin accès avatar par défaut
-- Refactoriser parties communes verif_session.php et connexion_post.php
-- Mettre possibilité configurer taille avatars
-- Centrer lien "SOURCE GIT"
-- Ajoutez possibilités de rajouter des liens dans la rédaction de billets (voir section "Créez votre bbCode" cours regex n°2 OC)
-- Déboguer envoi avatar sur version online
-- pagination : mettre conditions pour faire disparaitre icones page précédente / suivante si page minimum / maximum atteintes
-- rajouter possibilité définir longueur news page accueil (substr dans afficher_billets.php)
-- Rajouter possibilité fournir source article
-- Empêcher doublons pseudos
-- Résoudre problème upload avatars extension
-- Mettre option afficher "pseudo supprimé" si compte ayant posté inexistant
-- Ajouter option connexion automatique après inscription
-
-FRONT
-- Corriger affichage responsive
-- Texte articles justifié
-
-FACULTATIF
-- Laisser possibilité de régler la taille max de l'avatar (poids/dimensions) dans le pannel admin
-- Laisser possibilité définir temps redirection
-- laisser possibilité définir extension images autorisées
+Pagination commentaires
+Améliorer pagination page d'accueil (limité à 3 pages pour l'instant)
+Supprimer affichage erreur si 0 commentaires postés
+Faire mise en forme de l'affichage du profil utilisateur
+Régler responsives
+Modifier contenu article de présentation
+Faire prendre la taille d'un col-lg-12 à l'article de présentation et le séparer
+du reste des articles, puis inverser l'ordre de ces articles afin que les nouveaux apparaissent
+en premier
