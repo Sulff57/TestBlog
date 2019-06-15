@@ -127,7 +127,8 @@ else
 pouvoir y insérer le commentaire également renvoyé dans celui-ci-->
 <?php
   if (!verif_session()){
-    ?><form id="form_poster_commentaire" action="commentaires_post.php" method="post">
+    ?>
+    <form id="form_poster_commentaire" action="commentaires_post.php" method="post">
       <div class="row mx-2" id="div_commentaire_no_login">
         <div class="col-lg-1" id="no_avatar_no_login">
           <img src="uploads/avatars/no_avatar.jpeg" id="no_avatar_img" alt="pas d'avatar"/>
@@ -139,11 +140,11 @@ pouvoir y insérer le commentaire également renvoyé dans celui-ci-->
           </div>
         </div>
       </div>
-
-
-
       <input type="submit" value="Connexion">
-    </form><?php
+    </form>
+    <div id="zone_comment_no_login_bg">
+    </div>
+    <?php
   }
   else{
     ?>      <input type="hidden" id="id_news" name="id_news" value="<?php echo $id_news; ?>"><?php

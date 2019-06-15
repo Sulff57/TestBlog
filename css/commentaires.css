@@ -90,6 +90,15 @@ article{
 
 #form_poster_commentaire{
   margin-top: 4vh;
+  z-index: 2;
+}
+
+#zone_comment_no_login_bg{
+  content: url('../images/hatched_background_green.png');
+  opacity: 0.15;
+  position: relative;
+  top: -135px;
+  left: -15px;
 }
 
 #no_avatar_no_login{
@@ -105,4 +114,10 @@ article{
 
 #commentaire_no_login{
   font-style: italic;
+}
+
+#no_login_comment_background{
+  position: relative;
+  bottom: 5vh;
+  opacity: 0.5;
 }
