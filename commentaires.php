@@ -128,19 +128,21 @@ pouvoir y insérer le commentaire également renvoyé dans celui-ci-->
 <?php
   if (!verif_session()){
     ?>
-    <form id="form_poster_commentaire" action="commentaires_post.php" method="post">
+    <form id="form_poster_commentaire" onclick="location.href='inscription.php';" style="cursor: pointer;">
       <div class="row mx-2" id="div_commentaire_no_login">
         <div class="col-lg-1" id="no_avatar_no_login">
           <img src="uploads/avatars/no_avatar.jpeg" id="no_avatar_img" alt="pas d'avatar"/>
         </div>
-        <div class="col-lg-10">
+        <div class="col-lg-11">
           <div class="row">
             <label class="col-lg-12" id="label_no_login">Votre commentaire :</label>
-            <textarea class="col-lg-12" name="commentaire" id="commentaire_no_login" rows="2" disabled>Pour poster un commentaire, vous devez vous identifier.</textarea>
+            <textarea class="col-lg-12" name="commentaire" id="commentaire_no_login" disabled>Pour poster un commentaire, vous devez vous identifier.</textarea>
           </div>
         </div>
       </div>
-      <input type="submit" value="Connexion">
+      <div class="col text-right">
+        <button type="button" class="btn btn-primary" id="boutton_commentaire_inscription" disabled>Inscription</button>
+      </div>
     </form>
     <div id="zone_comment_no_login_bg">
     </div>

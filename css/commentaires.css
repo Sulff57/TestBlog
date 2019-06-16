@@ -90,20 +90,23 @@ article{
 
 #form_poster_commentaire{
   margin-top: 4vh;
-  z-index: 2;
+  position: relative;
+  padding-bottom: 30px;
 }
 
-#zone_comment_no_login_bg{
-  content: url('../images/hatched_background_green.png');
-  opacity: 0.15;
-  position: relative;
-  top: -135px;
-  left: -15px;
+#form_poster_commentaire:after{
+  content: '';
+  position: absolute;
+  top: -15px; right: -15px;
+  bottom: 0;
+  background: url('../images/hatched_background_green.png') repeat;
+  opacity: 0.25;
+  width: calc(100% + 30px);
 }
+
 
 #no_avatar_no_login{
   padding: 0;
-  margin-right: 1vw;
 }
 
 #label_no_login{
@@ -114,10 +117,5 @@ article{
 
 #commentaire_no_login{
   font-style: italic;
-}
-
-#no_login_comment_background{
-  position: relative;
-  bottom: 5vh;
-  opacity: 0.5;
+  width: 30px;
 }
